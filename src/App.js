@@ -1,73 +1,68 @@
 import { useState } from 'react';
-import Banner from './components/Banner/Banner';
-import Form from './components/Form';
-import Team from './components/Team';
+import Banner from './componentes/Banner';
+import Formulario from './componentes/Formulario';
+import Time from './componentes/Time';
 
 function App() {
 
-  const teams = [
+  const times = [
     {
-      name: 'Full stack development',
-      primaryColor: '#D9F7E9',
-      secondaryColor: '#57C278'
+      nome: 'Programação',
+      corPrimaria: '#57C278',
+      corSecundaria: '#D9F7E9'
     },
     {
-      name: 'Front end',
-      primaryColor: '#E8F8FF',
-      secondaryColor: '#82CFFA'
+      nome: 'Front-End',
+      corPrimaria: '#82CFFA',
+      corSecundaria: '#E8F8FF'
     },
     {
-      name: 'Mobile',
-      primaryColor: '#F0F8E2',
-      secondaryColor: '#A6D157'
+      nome: 'Data Science',
+      corPrimaria: '#A6D157',
+      corSecundaria: '#F0F8E2'
     },
     {
-      name: 'Data Science',
-      primaryColor: '#FDE7E8',
-      secondaryColor: '#E06B69'
+      nome: 'Devops',
+      corPrimaria: '#E06B69',
+      corSecundaria: '#FDE7E8'
     },
     {
-      name: 'DevOps',
-      primaryColor: '#FAE9F5',
-      secondaryColor: '#D86EBF'
+      nome: 'UX e Design',
+      corPrimaria: '#DB6EBF',
+      corSecundaria: '#FAE9F5'
     },
     {
-      name: 'QA',
-      primaryColor: '#FFF5D9',
-      secondaryColor: '#FFBA05'
+      nome: 'Mobile',
+      corPrimaria: '#FFBA05',
+      corSecundaria: '#FFF5D9'
     },
     {
-      name: 'UX Design',
-      primaryColor: '#FFEEDF',
-      secondaryColor: '#FF8A29'
-    },
-    {
-      name: 'Inovation',
-      primaryColor: '#e8ebf7',
-      secondaryColor: '#ACBED8'
+      nome: 'Inovação e Gestão',
+      corPrimaria: '#FF8A29',
+      corSecundaria: '#FFEEDF'
     }
-]
+  ]
 
+  const [colaboradores, setColaboradores] = useState([])
 
-  const [collaborators, setCollaborators] = useState([])
-
-  const newCollaboratorCreated = (collaborator) =>{
-    console.log(collaborator)
-    setCollaborators([...collaborators, collaborator])
+  const aoNovoColaboradorAdicionado = (colaborador) => {
+    debugger
+    setColaboradores([...colaboradores, colaborador])
   }
 
   return (
     <div className="App">
-      <Banner/>
-      <Form teams={teams.map(team => team.name)} collaboratorCreated={collaborator => newCollaboratorCreated(collaborator)}/> 
-      {teams.map(team => <Team 
-      key={team.name} 
-      name={team.name} 
-      primaryColor={team.primaryColor} 
-      secondaryColor={team.secondaryColor}
-      collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
-      />)}
-    
+      <Banner />
+      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+
+      {times.map(time => <Time 
+        key={time.nome} 
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSecundaria} 
+        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+      />)}   
+
     </div>
   );
 }
