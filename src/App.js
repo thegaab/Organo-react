@@ -62,7 +62,7 @@ function App() {
       <Form teams={teams.map(team => team.name)} collaboratorCreated={collaborator => newCollaboratorCreated(collaborator)}/> 
       {teams.map(team => <Team 
       key={team.name} 
-      nome={team.name} 
+      name={team.name} 
       primaryColor={team.primaryColor} 
       secondaryColor={team.secondaryColor}
       collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}

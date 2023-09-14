@@ -6,7 +6,7 @@ import "./Form.css";
 
 const Form = (props) => {
 
-  const [nome, setNome] = useState('')
+  const [name, setName] = useState('')
   const [cargo, setCargo] = useState('')
   const [imagem, setImagem] = useState('')
   const [team, setTeam] = useState('')
@@ -15,11 +15,15 @@ const Form = (props) => {
   const aoSalvar = (evento) => {
     evento.preventDefault()
     props.collaboratorCreated({
-      nome,
+      name,
       cargo,
       imagem,
       team
     })
+    setName('')
+    setCargo('')
+    setImagem('')
+    setTeam('')
   }
   return (
     <section className="form">
@@ -27,10 +31,10 @@ const Form = (props) => {
         <h2>Preencha os dados para criar o card do colaborador</h2>
         <TextField
         essential={true} 
-        label="Nome" 
+        label="Name" 
         placeholder="Digite o seu nome"
-        valor={nome}
-        aoAlterado={val => setNome(val)}
+        valor={name}
+        aoAlterado={val => setName(val)}
         />
         <TextField 
         essential={true} 
