@@ -1,7 +1,9 @@
+import {    GiBoltBomb  } from 'react-icons/gi'
 import './Colaborador.css'
 
-const Colaborador = ({ nome, imagem, cargo, corDeFundo }) => {
+const Colaborador = ({ nome, imagem, cargo, corDeFundo, aoDeletar }) => {
     return (<div className='colaborador'>
+        <GiBoltBomb size={25} className='deleter' onClick={aoDeletar}/>
         <div className='cabecalho' style={{ backgroundColor: corDeFundo }}>
             <img src={imagem} alt={nome}/>
         </div>
