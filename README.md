@@ -9,9 +9,6 @@
   ## A website created together with @alura, the central idea of ​​the website is to help organize a company's teams, making it possible to separate people into their respective teams. In this project, componentization concepts were applied, making it simpler to reuse items within the project itself.
   
 <h1 align="center"> <a href="https://organo-alura-lyart-xi.vercel.app/">Check the aplication<a> </h1>
-  <p align="center">
-    <img src="https://media.discordapp.net/attachments/955884943383343215/1201183513953710170/image.png?ex=65c8e452&is=65b66f52&hm=40686fff4a2b14475f20c304c1d2707e36fec35718a7e1c0a0d0abbbcc4dddf0&=&format=webp&quality=lossless&width=1440&height=480"width="900" />
-  </p>
   
   ## Building
   
